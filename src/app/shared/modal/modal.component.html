@@ -1,0 +1,30 @@
+<div class="modal-content">
+  <div class="modal-header">
+    <h4 class="modal-title">{{title}}</h4>
+    <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('close')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <div class="table-responsive">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Creado por</th>
+            <th>Creación</th>
+            <th>Actualizado por</th>
+            <th>Actualización</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{table.created_by_name}}</td>
+            <td>{{table.created_at | date:'medium'}}</td>
+            <td>{{table.updated_by_name}}</td>
+            <td>{{table.updated_at | date:'medium'}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

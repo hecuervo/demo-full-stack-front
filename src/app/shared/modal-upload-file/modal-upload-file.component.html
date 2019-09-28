@@ -1,0 +1,29 @@
+<div class="modal-content">
+  <div class="modal-header">
+    <h4 class="modal-title">{{title}}</h4>
+    <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('close')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="modal-body">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="form-group" [ngClass]="{ 'has-danger': submitted && f.name.errors }">
+            <label class="control-label">Archivo</label>
+            <input formControlName="name" [ngClass]="{ 'form-control-danger': submitted && f.name.errors }" type="file"
+              class="form-control" (change)="onFileChange($event)">
+            <small *ngIf="submitted && f.name.errors" class="form-control-feedback"> Campo requerido</small>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-secondary waves-effect waves-light"
+        (click)="activeModal.dismiss('close')">Cancelar</button>
+      <button type="submit" [disabled]="loading" class="btn btn-info waves-effect waves-light">
+        Cargar
+      </button>
+    </div>
+  </form>
+</div>

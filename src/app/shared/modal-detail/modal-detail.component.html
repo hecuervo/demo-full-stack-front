@@ -1,0 +1,19 @@
+<div class="modal-content">
+  <div class="modal-header">
+    <h4 class="modal-title">{{title}}</h4>
+    <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('close')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <div class="table-responsive">
+      <div class="row">
+        <div *ngFor="let item of columns" class="col-sm-6">
+          <strong>{{item.header}}:</strong>
+          <p class="text-muted">{{data[item.key] | detail:item }}</p>
+          <br>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

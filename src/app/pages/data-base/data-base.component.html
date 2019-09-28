@@ -1,0 +1,60 @@
+<div class="row">
+  <div class="col-12">
+    <div class="card">
+      <div class="card-body">
+        <div class="row m-b-30">
+          <div class="col-sm-6">
+            <button
+              type="submit"
+              class="btn btn-info waves-effect waves-light mr-2"
+              (click)="uploadFile()"
+            >
+              Cargar Excel
+            </button>
+          </div>
+          <div class="col-sm-5  col-xs-12">
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Buscar..."
+              (keyup)="applyFilter($event.target.value)"
+            />
+          </div>
+        </div>
+
+        <div class="mat-elevation-z1">
+          <div class="table-responsive">
+            <table mat-table [dataSource]="dataSource" matSort>
+              <ng-container matColumnDef="policy_id">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header>policy_id</th>
+                <td mat-cell *matCellDef="let row">{{ row.policy_id }}</td>
+              </ng-container>
+              <ng-container matColumnDef="statecode">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header>statecode</th>
+                <td mat-cell *matCellDef="let row">{{ row.statecode }}</td>
+              </ng-container>
+              <ng-container matColumnDef="county">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header>county</th>
+                <td mat-cell *matCellDef="let row">{{ row.county }}</td>
+              </ng-container>
+              <ng-container matColumnDef="eq_site_limit">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header>eq_site_limit</th>
+                <td mat-cell *matCellDef="let row">{{ row.eq_site_limit }}</td>
+              </ng-container>
+              <ng-container matColumnDef="hu_site_limit">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header>hu_site_limit</th>
+                <td mat-cell *matCellDef="let row">{{ row.hu_site_limit }}</td>
+              </ng-container>
+              <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+              <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+            </table>
+          </div>
+          <mat-paginator
+            [pageSizeOptions]="pages"
+            showFirstLastButtons
+          ></mat-paginator>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

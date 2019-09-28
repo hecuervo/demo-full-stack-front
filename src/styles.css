@@ -1,0 +1,66 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import '~perfect-scrollbar/css/perfect-scrollbar.css';
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+
+.ps .ps__scrollbar-y-rail {
+  left: 3px;
+  right: auto;
+}
+
+.icon-excel {
+  width: 2.5rem;
+  cursor: pointer;
+}
+
+.icon-color {
+  cursor: pointer;
+  color: #67757c;
+}
+
+.table-responsive table {
+  width: 100%;
+}
+
+.modal-header {
+  background-color: #f0ad4e;
+}
+
+td.mat-column-email,
+td.mat-column-description,
+td.mat-column-contact_name,
+td.mat-column-street,
+td.mat-column-career_name,
+td.mat-column-curp,
+td.mat-column-firstname,
+td.mat-column-lastname,
+td.mat-column-suburb {
+  min-width: 13rem !important;
+}
+
+td.mat-cell, td.mat-footer-cell, th.mat-header-cell {
+  min-width: 8rem;
+}
+
+td.mat-column-actions {
+  width: 100px !important;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.w150 {
+  width: 150px;
+}
+
+.w70 {
+  width: 70px;
+}
+
+.w50 {
+  width: 50px;
+}
+
+
